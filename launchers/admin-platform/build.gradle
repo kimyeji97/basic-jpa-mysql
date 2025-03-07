@@ -1,0 +1,12 @@
+bootJar.enabled = true
+jar.enabled = true
+
+dependencies {
+    implementation project(':platform-base:admin-base')
+    implementation project(':platform-config:web-config')
+    implementation project(':platform-config:auth-config')
+
+    implementation libs.spring.starter
+    implementation libs.spring.starter.jpa
+    implementation libs.test.starter.test
+}

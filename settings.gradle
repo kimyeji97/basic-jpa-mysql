@@ -1,0 +1,14 @@
+rootProject.name = 'luckybite_platform'
+
+include 'platform-core',
+        'platform-config:common-config',
+        'platform-config:web-config',
+        'platform-config:batch-config',
+        'platform-config:auth-config',
+        'platform-base:common-base',
+        'platform-base:batch-base',
+        'platform-base:admin-base',
+        'platform-base:app-base',
+        'launchers:batch-platform',
+        'launchers:admin-platform',
+        'launchers:app-platform'

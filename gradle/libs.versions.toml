@@ -1,0 +1,31 @@
+[versions]
+springboot-version = "3.4.3"
+poi-version = "5.3.0"
+querydsl-version = '5.0.0'
+
+[plugins]
+
+[libraries]
+spring-starter = { module = "org.springframework.boot:spring-boot-starter" }
+spring-starter-batch = { module = "org.springframework.boot:spring-boot-starter-batch", version.ref = "springboot-version" }
+spring-starter-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "springboot-version" }
+spring-starter-aop = { module = "org.springframework.boot:spring-boot-starter-aop", version.ref = "springboot-version" }
+
+spring-starter-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "springboot-version" }
+spring-config-processor = { module = "org.springframework.boot:spring-boot-configuration-processor", version.ref = "springboot-version" }
+db-mysql = { module = "com.mysql:mysql-connector-j", version = "9.0.0" }
+db-querydsl-jpa = { module = "com.querydsl:querydsl-jpa", version.ref = "querydsl-version" }
+db-querydsl-apt = { module = "com.querydsl:querydsl-apt", version.ref = "querydsl-version" }
+db-jakarta-persistence = { module = "jakarta.persistence:jakarta.persistence-api" }
+db-jakarta-annotation = { module = "jakarta.annotation:jakarta.annotation-api" }
+
+test-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springboot-version" }
+test-batch-test = { module = "org.springframework.boot:spring-batch-test", version.ref = "springboot-version" }
+test-junit = { module = "org.junit.platform:junit-platform-launcher", version = "1.11.4" }
+
+common-lang3 = { module = "org.apache.commons:commons-lang3", version = "3.17.0" }
+common-reflections = { module = "org.reflections:reflections", version = "0.10.2" }
+common-guava = { module = "com.google.guava:guava", version = "32.1.2-jre" }
+common-lombok = { module = "org.projectlombok:lombok", version = "1.18.36" }
+common-poi = { module = "org.apache.poi:poi", version.ref = "poi-version" }
+common-poi-ooxml = { module = "org.apache.poi:poi-ooxml", version.ref = "poi-version" }

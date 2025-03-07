@@ -1,0 +1,10 @@
+bootJar.enabled = false
+jar.enabled = true
+
+dependencies {
+    implementation project(':platform-base:common-base')
+
+    implementation libs.spring.starter.jpa
+    implementation libs.spring.starter.aop
+    implementation libs.common.lombok
+}

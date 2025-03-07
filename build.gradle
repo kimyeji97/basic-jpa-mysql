@@ -1,0 +1,71 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.3'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+allprojects {
+    group = 'com.techlabs'
+    version = '1.0.0'
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+    }
+    repositories {
+        mavenCentral()
+    }
+}
+
+
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-gradle-plugin:3.0.1'
+        implementation 'io.spring.gradle:dependency-management-plugin:1.1.0'
+
+        implementation libs.spring.starter
+    }
+
+
+    /*
+     * queryDSL 설정 추가
+     */
+    def querydslDir = "src/main/generated"
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+        querydsl.extendsFrom compileClasspath
+    }
+    compileJava {
+        options.compilerArgs << '-Aquerydsl.generatedAnnotationClass=javax.annotation.Generated'
+    }
+    tasks.withType(JavaCompile) {
+        options.generatedSourceOutputDirectory = file(querydslDir)
+    }
+    clean {
+        delete file(querydslDir)
+    }
+
+//    sourceSets {
+//        main {
+//            java {
+//                srcDirs = ['src/main/java', 'src/main/generated']
+//            }
+//        }
+//    }
+//
+//    tasks.withType(JavaCompile) {
+//        options.annotationProcessorGeneratedSourcesDirectory = file('src/main/generated')
+//    }
+
+    tasks.named('test') {
+        useJUnitPlatform()
+    }
+}
+
