@@ -4,13 +4,17 @@ jar.enabled = true
 dependencies {
     implementation project(':platform-core')
 
-    implementation libs.spring.starter.jpa
     runtimeOnly libs.db.mysql
 
-    implementation libs.common.lang3
+    implementation libs.spring.starter.web
+    implementation libs.spring.starter.jpa
+    implementation libs.spring.starter.mail
+
     implementation libs.common.reflections
     implementation libs.common.guava
-    implementation libs.common.lombok
     implementation libs.common.poi
     implementation libs.common.poi.ooxml
+    implementation libs.common.thymeleaf
+    implementation libs.common.thymeleaf.spring6
+    implementation libs.common.ehcache
 }

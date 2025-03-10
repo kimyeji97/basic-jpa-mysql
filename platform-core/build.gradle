@@ -2,4 +2,12 @@ bootJar.enabled = false
 jar.enabled = true
 
 dependencies {
+    implementation libs.spring.data
+    implementation libs.spring.starter.web
+
+    implementation libs.common.lombok
+    implementation libs.common.guava
+    implementation libs.common.lang3
+
+    annotationProcessor libs.common.lombok
 }

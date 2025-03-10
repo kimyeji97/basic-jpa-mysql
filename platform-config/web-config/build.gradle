@@ -2,6 +2,8 @@ bootJar.enabled = false
 jar.enabled = true
 
 dependencies {
+    implementation project(":platform-core")
+    implementation project(":platform-base:common-base")
     implementation project(':platform-config:common-config')
 
     implementation libs.spring.starter.web

@@ -1,0 +1,29 @@
+server:
+  port: 8071
+  servlet:
+    session:
+      timeout: 3600
+
+spring:
+  application:
+    name: app-platform
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+        #        dialect: org.hibernate.dialect.MySQLDialect
+        show_sql: true
+  datasource:
+    url: jdbc:mysql://52.78.55.103:3306/luckybite?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=utf8&userUnicode=true&serverTimezone=Asia/Seoul
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: developer
+    password: Techlabs!3@4
+
+logging:
+  level:
+    org.springframework: DEBUG
+    com.zaxxer.hikari: DEBUG

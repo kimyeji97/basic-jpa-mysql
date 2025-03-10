@@ -5,6 +5,5 @@ dependencies {
     implementation project(':platform-base:app-base')
     implementation project(':platform-config:web-config')
 
-    implementation libs.spring.starter
     implementation libs.test.starter.test
 }

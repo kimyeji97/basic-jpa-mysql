@@ -18,7 +18,6 @@ allprojects {
 }
 
 
-
 subprojects {
     apply plugin: 'java'
     apply plugin: 'org.springframework.boot'
@@ -29,6 +28,12 @@ subprojects {
         implementation 'io.spring.gradle:dependency-management-plugin:1.1.0'
 
         implementation libs.spring.starter
+        implementation libs.common.lombok
+        implementation libs.common.lang3
+        implementation libs.common.jakarta.annotation
+        implementation libs.common.jakarta.persistence
+
+        annotationProcessor libs.common.lombok
     }
 
 

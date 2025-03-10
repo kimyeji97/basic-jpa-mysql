@@ -6,7 +6,6 @@ dependencies {
     implementation project(':platform-config:web-config')
     implementation project(':platform-config:auth-config')
 
-    implementation libs.spring.starter
     implementation libs.spring.starter.jpa
     implementation libs.test.starter.test
 }

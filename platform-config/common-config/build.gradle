@@ -2,5 +2,12 @@ bootJar.enabled = false
 jar.enabled = true
 
 dependencies {
-    implementation libs.test.starter.test
+    implementation project(":platform-core")
+    implementation project(":platform-base:common-base")
+
+    implementation libs.spring.starter.web
+    implementation libs.common.lombok
+
+
+    annotationProcessor libs.common.lombok
 }
